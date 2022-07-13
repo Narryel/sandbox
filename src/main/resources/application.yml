@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:35432/sandbox
+    username: sandbox
+    password: sandboxpwd
+    driver-class-name: org.postgresql.Driver

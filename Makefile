@@ -1,7 +1,7 @@
 .PHONY: db db-stop
 
-up:
+start:
 	docker-compose -f ./docker-compose.yml up -d
 
-down:
+stop:
 	docker-compose -f ./docker-compose.yml down
