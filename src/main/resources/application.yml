@@ -1,6 +1,19 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:35432/sandbox
     username: sandbox
     password: sandboxpwd
     driver-class-name: org.postgresql.Driver
+
+springdoc:
+  packagesToScan: ru.narryel.sandbox
+  pathsToMatch: /**
