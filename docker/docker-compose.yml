@@ -1,0 +1,35 @@
+services:
+  postgres:
+    container_name: pg-sandbox
+    ports:
+      - "35432:5432"
+    image: postgres
+    environment:
+      POSTGRES_DB: "sandbox"
+      POSTGRES_USER: "sandbox"
+      POSTGRES_PASSWORD: "sandboxpwd"
+    restart: on-failure:3
+
+  prometheus:
+    container_name: prometheus-sandbox
+    ports:
+      - 9090:9090
+    image: prom/prometheus
+    volumes:
+      - ./configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - postgres
+#    extra_hosts:
+#      - "dockerhost:host.docker.internal"
+
+  grafana:
+    container_name: grafana-sandbox
+    ports:
+      - 3000:3000
+    image: grafana/grafana-oss
+    depends_on:
+      - prometheus
+    volumes:
+      - ./configs/grafana/spring-boot-dashboard.json:/var/lib/grafana/dashboards/spring-boot-dashboard.json
+      - ./configs/grafana/datasources.yml:/usr/share/grafana/conf/provisioning/datasources/all.yml
+      - ./configs/grafana/dashboards.yml:/usr/share/grafana/conf/provisioning/dashboards/all.yml
