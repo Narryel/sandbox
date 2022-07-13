@@ -1,4 +1,4 @@
-package com.example.sandbox
+package ru.narryel.sandbox
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

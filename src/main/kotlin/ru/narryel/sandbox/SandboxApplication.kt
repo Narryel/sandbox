@@ -1,4 +1,4 @@
-package com.example.sandbox
+package ru.narryel.sandbox
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
