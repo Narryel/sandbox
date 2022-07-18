@@ -10,9 +10,7 @@ import org.springframework.context.annotation.Configuration
 class MetricConfiguration {
 
     @Bean
-    fun metricsCommonTags(): MeterRegistryCustomizer<MeterRegistry>? {
-        return MeterRegistryCustomizer { registry: MeterRegistry ->
-            registry.config().commonTags("application", "sandbox-app")
-        }
+    fun metricsCommonTags() = MeterRegistryCustomizer { registry: MeterRegistry ->
+        registry.config().commonTags("application", "sandbox-app")
     }
 }

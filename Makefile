@@ -8,9 +8,10 @@ stop:
 
 restart: stop start
 
+browse: grafana prometheus swagger
+
 grafana:
 	open http://localhost:3000
-
 
 prometheus:
 	open http://localhost:9090
