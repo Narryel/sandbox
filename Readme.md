@@ -1,0 +1,7 @@
+Что нужно сделать
+1. grafana создать дашборд
+2. корутины лаба
+3. role-based authorization + PreAuth
+4. sign up html 
+5. jwt 
+6. нагрузочное тестирование по кафке и http (blocking)
