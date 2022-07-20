@@ -4,4 +4,5 @@
 3. role-based authorization + PreAuth
 4. sign up html 
 5. jwt 
-6. нагрузочное тестирование по кафке и http (blocking)
+6. хранить сессии в redis
+7. нагрузочное тестирование по кафке и http (blocking)
