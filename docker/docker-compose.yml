@@ -26,10 +26,11 @@ services:
     container_name: grafana-sandbox
     ports:
       - 3000:3000
-    image: grafana/grafana-oss
+    image: grafana/grafana
     depends_on:
       - prometheus
     volumes:
-      - ./configs/grafana/spring-boot-dashboard.json:/var/lib/grafana/dashboards/spring-boot-dashboard.json
-      - ./configs/grafana/datasources.yml:/usr/share/grafana/conf/provisioning/datasources/all.yml
-      - ./configs/grafana/dashboards.yml:/usr/share/grafana/conf/provisioning/dashboards/all.yml
+#      - ./configs/grafana/spring-boot-dashboard.json:/var/lib/grafana/dashboards/spring-boot-dashboard.json not used RN due to empty variables problem
+      - ./configs/grafana/boot.json:/var/lib/grafana/dashboards/boot.json
+      - ./configs/grafana/datasources.yml:/etc/grafana/provisioning/datasources/all.yml
+      - ./configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/all.yml
