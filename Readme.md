@@ -1,6 +1,6 @@
 Что нужно сделать
 1. grafana создать дашборд
-2. корутины лаба
+2. корутины лаба DONED
 3. role-based authorization + PreAuth
 4. sign up html 
 5. jwt 
