@@ -2,7 +2,6 @@ package ru.narryel.sandbox.configuration
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.security.config.Customizer.withDefaults
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.core.userdetails.User
@@ -19,6 +18,7 @@ class SecurityConfiguration {
         http.authorizeHttpRequests { auth ->
             auth
                 .antMatchers("/actuator/**").permitAll()
+                .antMatchers("/test/**").permitAll()
                 .anyRequest().authenticated()
         }
             .formLogin()

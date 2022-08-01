@@ -15,6 +15,8 @@ class TestController(
     fun getHello(): String {
         metrics.testControllerRequestCounter.increment()
         val count = metrics.testControllerRequestCounter.count()
-        return "Hello $count"
+        return "Hello $count".also {
+            println(it)
+        }
     }
 }

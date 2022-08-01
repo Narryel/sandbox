@@ -1,4 +1,4 @@
-.PHONY: db db-stop
+.PHONY: db db-stop gatling
 
 start:
 	docker-compose -f ./docker/docker-compose.yml up -d
@@ -18,3 +18,6 @@ prometheus:
 
 swagger:
 	open http://localhost:8080/swagger-ui.html
+
+gatling:
+	./gatling/gatling-charts-highcharts-bundle-3.8.2/bin/gatling.sh -rm local
