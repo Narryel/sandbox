@@ -49,10 +49,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.springframework.kafka:spring-kafka-test")
-//    testImplementation(files("./gatling/gatling-charts-highcharts-bundle-3.8.2/lib"))
     testImplementation(fileTree("./gatling/gatling-charts-highcharts-bundle-3.8.2/lib") { include("*.jar") })
-//    testImplementation(fileTree("gatling/gatling-charts-highcharts-bundle-3.8.2/lib") { include("*.jar") })
-//    testImplementation(files("lib/"))
 }
 
 dependencyManagement {
